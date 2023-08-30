@@ -1,0 +1,4 @@
+SELECT DISTINCT images.depictstmsobjectid AS objectid, images.uuid,terms.termtype, terms.term, objects.title, images.width, images.height, objects.medium, objects.classification, image.iiifurl, images.iiifthumburl
+FROM  objects, images, terms
+WHERE images.depictstmsobjectid = objects.objectid AND images.depictstmsobjectid = terms.objectid
+AND (objects.classification= 'Painting' OR objects.classification= 'Drawing');
